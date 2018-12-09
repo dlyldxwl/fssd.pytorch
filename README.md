@@ -1,9 +1,9 @@
 # Fssd.pytorch
 A Pytorch0.4 re-implementation of Fssd detection network, with pretrained weights on VOC0712 and mAP=0.79.74.
 
-Network | train data | test data | mAP | FPS | download
+Network | train data | test data | mAP | FPS | Download Link
 --|:--:|:--:|:--:|:--:|--:
-FSSD | VOC 07+12 | VOC 07 test | 79.74 | 120 | [BaiduYun](https://pan.baidu.com/s/1m3i7gQGxZNk0cpqp4RBcXA) 
+FSSD | VOC 07+12 | VOC 07 test | 79.74 | 120 | [Baidu](https://pan.baidu.com/s/1m3i7gQGxZNk0cpqp4RBcXA)/[Google](https://drive.google.com/file/d/1dpP2U6fWpb5CszwJS7q06A9gtX1fsBrS/view?usp=sharing)
 
 Official caffe implementation is [here](https://github.com/lzx1413/CAFFE_SSD/tree/fssd), and pytorch0.3 re-implementation is [here](https://github.com/lzx1413/PytorchSSD). 
 
