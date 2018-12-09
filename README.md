@@ -1,5 +1,5 @@
 # Fssd.pytorch
-A Pytorch0.4 re-implementation of Fssd detection network, with pretrained weights on VOC0712 and mAP=0.79.74.
+A Pytorch0.4 re-implementation of Fssd detection network, with pretrained weights on VOC0712 and mAP=79.74.
 
 Network | train data | test data | mAP | FPS | Download Link
 --|:--:|:--:|:--:|:--:|--:
