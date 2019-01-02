@@ -9,7 +9,7 @@ Official caffe implementation is [here](https://github.com/lzx1413/CAFFE_SSD/tre
 
 For details, please read the paper: [FSSD：Feature Fusion Single Shot Multibox Detector](https://arxiv.org/abs/1712.00960v1)
   
-Our re-implementation is slightly better than paper (79.74 vs 78.8).  More high performance models will be available soon. 
+Our re-implementation is slightly better than paper (**79.74 vs 78.8**).  More high performance models will be available soon. 
 
 ## About more details
 + The implementation code abandons the bn layer after feature fusion.
