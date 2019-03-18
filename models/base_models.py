@@ -24,10 +24,38 @@ def vgg(cfg, i, batch_norm=False):
                nn.ReLU(inplace=True), conv7, nn.ReLU(inplace=True)]
     return layers
 
+# Prune for VGG
+def vgg_prune(cfg, i, batch_norm=True):
+    layers = []
+    in_channels = i
+    for v in cfg:
+        if v == 'M':
+            layers += [nn.MaxPool2d(kernel_size=2, stride=2)]
+        elif v == 'C':
+            layers += [nn.MaxPool2d(kernel_size=2, stride=2, ceil_mode=True)]
+        else:
+            conv2d = BasicConv(in_channels, v, kernel_size=3, padding=1,relu=False)
+            layers += [conv2d, nn.ReLU(inplace=True)]
+            in_channels = v
+    pool5 = nn.MaxPool2d(kernel_size=3, stride=1, padding=1)
+    # conv6 = BasicConv(512, 1024, kernel_size=3, padding=6, dilation=6,relu=False)
+    # conv7 = BasicConv(1024, 1024, kernel_size=1,relu=False)
+    # prune
+    conv6 = BasicConv(54, 136, kernel_size=3, padding=6, dilation=6,relu=False)
+    conv7 = BasicConv(136, 212, kernel_size=1,relu=False)
+    layers += [pool5, conv6, nn.ReLU(inplace=True), conv7, nn.ReLU(inplace=True)]
+    return layers
+
 
 vgg_base = {
     '300': [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'C', 512, 512, 512, 'M',
             512, 512, 512],
+    '512': [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'C', 512, 512, 512, 'M',
+            512, 512, 512],
+}
+vgg_base_prune = {
+    '300': [38, 58, 'M', 101, 121, 'M', 218, 232, 234, 'C', 282, 297, 243, 'M',
+            214, 199, 54],
     '512': [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'C', 512, 512, 512, 'M',
             512, 512, 512],
 }
