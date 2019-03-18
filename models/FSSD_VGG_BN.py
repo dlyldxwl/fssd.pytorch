@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from .base_models import vgg, vgg_base
+from .base_models import vgg, vgg_base,vgg_prune
 
 
 class BasicConv(nn.Module):
@@ -240,7 +240,7 @@ def build_net(size=300, num_classes=21):
         print("Error: Sorry only FSSD300 and FSSD512 is supported currently!")
         return
 
-    return FSSD(*feature_transform_module(vgg(vgg_base[str(size)], 3), add_extras(extras[str(size)], 1024), size=size),
+    return FSSD(*feature_transform_module(vgg_prune(vgg_base[str(size)], 3), add_extras(extras[str(size)], 1024), size=size),
                 pyramid_ext=pyramid_feature_extractor(size),
                 head=multibox(fea_channels[str(size)], mbox[str(size)], num_classes), num_classes=num_classes,
                 size=size)
