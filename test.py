@@ -46,6 +46,10 @@ else:
 
 if args.version == 'FSSD_VGG':
     from models.FSSD_VGG import build_net
+elif args.version == 'FSSD_VGG_BN':
+    from models.FSSD_VGG_BN import build_net
+elif args.version == 'FSSD_VGG_prune':
+    from models.FSSD_VGG_prune import build_net
 else:
     print('Unkown version!')
 
