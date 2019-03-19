@@ -14,7 +14,7 @@ Our re-implementation is slightly better than paper (**79.74 vs 78.8**). Inferen
 ## About more details
 + The implementation code abandons the bn layer after feature fusion.
 + Because the limitation of amount of gpu, batch_size is set to 32. If use 64 or more, I believe it will produce better performance.
-+ If you want to re-produce more accurate model, I believe that adding BN to the body of FSSD will be very effective.
++ If you want to re-produce more accurate model, I believe that **adding BN to the body of FSSD and applying Mixup**  will be very effective.
 + The code is mainly based on [rfbNet](https://github.com/ruinmessi/RFBNet). If you are interested in this project, please email me([yhao.chen0617@gmail.com](yhao.chen0617@gmail.com)) 
 
 ## Update
