@@ -25,7 +25,7 @@ I add a prune file for FSSD, which bases on Network Slimming (ICCV 2017), for de
  State | mAP | FPS | GPU | Model Size |Download Link
 --|:--:|:--:|:--:|:--:|--:
 Original |79.74 | 90 | TITAN X Pascal | 136M | [Baidu](https://pan.baidu.com/s/1m3i7gQGxZNk0cpqp4RBcXA)/[Google](https://drive.google.com/file/d/1dpP2U6fWpb5CszwJS7q06A9gtX1fsBrS/view?usp=sharing) 
-First Prune (50%) | 79.64 | **150** | TITAN X Pascal | **52M** |
+First Prune (50%) | 79.64 | **150** | TITAN X Pascal | **52M** |[Google](https://drive.google.com/file/d/1RjQbZxwGepqaTeACVu8bdQiOY0HftWIb/view?usp=sharing) 
 Second Prune  |  |  |  |  |
 
 **Steps for pruning the model:**
