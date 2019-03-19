@@ -32,4 +32,4 @@ Second Prune  |  |  |  |  |
 + Training the FSSD with BN model, meanwhile applying L1 constraints to the parameters of BN
 + Applying Network Slimming to the model trained in the previous step （Prune threshold is defaulted to 50%）
 + Re-train the pruned model, approximate 200 epochs, drop 0.1% in accuracy.
-+ If still prune the model, I believe it can produce the result of mAP>79%, FPS~200. 
++ If still prune the model, I believe it can produce the result of mAP>79%, FPS~200. Of course, for the pruned model, BN can be merged to the convolution layer to be further accelerate.
