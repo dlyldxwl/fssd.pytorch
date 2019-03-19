@@ -143,7 +143,12 @@ with torch.no_grad():
     priors = priorbox.forward()
     if args.cuda:
         priors = priors.cuda()
-
+        
+def updateBN(s=0.0001):
+    for m in net.modules():
+        if isinstance(m,torch.nn.BatchNorm2d):
+            m.weight.grad.detach().add_(s*torch.sign(m.weight.detach()))
+        
 def train():
     net.train()
     # loss counters
@@ -220,6 +225,8 @@ def train():
         loss_l, loss_c = criterion(out, priors, targets)
         loss = loss_l + loss_c
         loss.backward()
+        # if epoch > args.warm_epoch:
+        #     updateBN()
         optimizer.step()
         t1 = time.time()
         loc_loss += loss_l.item()
